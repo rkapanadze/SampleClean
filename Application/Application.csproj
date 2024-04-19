@@ -10,4 +10,10 @@
       <ProjectReference Include="..\Domain\Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Common\Interfaces\" />
+      <Folder Include="Common\Mappings\" />
+      <Folder Include="Features\" />
+    </ItemGroup>
+
 </Project>
