@@ -1,7 +1,6 @@
-<h1><strong>Simple .NET Clean Architecture Application</strong></h1>
+<h1><strong>.NET Clean Architecture Application</strong></h1>
 
-<p>This project is a demonstration of a .NET application built following the Clean Architecture principles. It consists of different layers, each serving a specific purpose in maintaining a clean and
-scalable codebase.</p>
+<p>This project is a demonstration of a .NET application built following the Clean Architecture principles. It embraces SOLID principles and Object-Oriented Programming (OOP) paradigms, fostering maintainability and extensibility. The application consists of different layers, each serving a specific purpose in maintaining a clean and scalable codebase.</p>
 
 <h2><strong>Domain Layer</strong></h2>
 <p>The Domain layer encapsulates enterprise business rules. It serves as the heart of the application, containing the core logic that represents the business domain.</p>
