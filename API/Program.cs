@@ -1,5 +1,6 @@
 using API.Configuration;
 using API.Middleware;
+using Application.Common.DI;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +13,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddProblemDetails();
-
+builder.Services.AddApplication();
 
 var app = builder.Build();
 
