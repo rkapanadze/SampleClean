@@ -1,0 +1,2 @@
+﻿dotnet ef migrations add init -s ..\API\Api.csproj
+dotnet ef database update  -s ..\API\Api.csproj
