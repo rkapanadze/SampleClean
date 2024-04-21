@@ -1,6 +1,5 @@
 ﻿using Application.Common.Interfaces.Repositories;
 using AutoMapper;
-using Domain.Entities;
 using MediatR;
 
 namespace Application.Features.Drivers.Queries.GetAllDrivers;
