@@ -1,2 +1,6 @@
-﻿dotnet ef migrations add init -s ..\API\Api.csproj
+﻿dotnet ef migrations add initprod -s ..\API\Api.csproj
 dotnet ef database update  -s ..\API\Api.csproj
+
+$Env:ASPNETCORE_ENVIRONMENT = "Production"
+
+dotnet ef migrations remove -s ..\API\Api.csproj

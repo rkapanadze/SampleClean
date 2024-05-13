@@ -15,13 +15,22 @@ internal static class ServiceCollectionExtention
         services.AddScoped<IDriversRepository, DriversRepository>();
     }
 
-    internal static void AddDatabaseContext(this IServiceCollection services, IConfiguration configuration)
+    internal static void AddDatabaseContext(this IServiceCollection services, IConfiguration configuration, IWebHostEnvironment env)
     {
         services.AddDbContext<AppDbContext>((sp, opts) =>
         {
             var auditableInterceptor = sp.GetService<UpdateAuditableEntitiesInterceptor>()!;
-            opts.UseSqlite(configuration.GetConnectionString("DefaultConnection"))
-                .AddInterceptors(auditableInterceptor);
+        
+            if (env.IsDevelopment())
+            {
+                opts.UseSqlite(configuration.GetConnectionString("DefaultConnection"))
+                    .AddInterceptors(auditableInterceptor);
+            }
+            else
+            {
+                opts.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
+                    .AddInterceptors(auditableInterceptor);
+            }
         });
     }
 }
